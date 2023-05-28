@@ -24,6 +24,15 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    
+    <!-- BLOCK RIGHT CLICK -->
+    <script>
+    // Mencegah klik kanan
+    window.addEventListener('contextmenu', function (e) {
+        e.preventDefault(); 
+        alert('Jangan macem-macem 😏'); 
+    }, false);
+</script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
