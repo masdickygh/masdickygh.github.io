@@ -22,6 +22,11 @@
             margin-top: 0;
         }
 
+        #contact-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
         #contact-form input,
         #contact-form textarea {
             width: 100%;
@@ -44,42 +49,16 @@
 <body>
     <div id="contact-form">
         <h2>Contact Us</h2>
-        <form action="https://formsubmit.co/dickyprasetya@proton.me" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+        <form action="https://formspree.io/f/xoqzzgal" method="POST">
+            <label for="email">Email Anda:</label>
+            <input type="email" id="email" name="email">
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message"></textarea>
 
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" required>
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button type="submit">Submit</button>
+            <!-- your other form fields go here -->
+            <button type="submit">Kirim</button>
         </form>
     </div>
-
-    <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault(); // Menghentikan submit form
-
-            // Mengambil nilai dari input
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var subject = document.getElementById('subject').value;
-            var message = document.getElementById('message').value;
-
-            // Lakukan apa pun yang ingin Anda lakukan dengan data yang dikirim
-            // Misalnya, validasi data atau tindakan lain sebelum mengirimkan formulir
-
-            // Setelah melakukan tindakan yang diinginkan, Anda dapat mengirimkan formulir
-            document.querySelector('form').submit();
-
-            // Redirect ke halaman "Terima kasih" setelah pengiriman formulir
-            window.location.href = "index.html";
-        });
-    </script>
 </body>
 </html>
