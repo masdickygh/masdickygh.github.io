@@ -7,7 +7,7 @@
 body{
 	width: 100%;
 	min-height: 100vh;
-	background-color: #2e2e2e;
+	background-color: white;
 	color: white;
 }
 .container{
@@ -39,7 +39,7 @@ body{
 section.left .contactTitle h2{
 	position: relative;
 	font-size: 28px;
-	color: #ddd;
+	color: #040505;
 	display: inline-block;
 	margin-bottom: 25px;
 }
@@ -57,13 +57,13 @@ section.left .contactTitle h2::after{
 	position: absolute;
 	width: 25%;
 	height: 3px;
-	background-color: dodgerblue;
+	background-color: #03fcb6;
 	top: calc(120% - 1px);
 	left: 0;
 }
 section.left .contactTitle p{
 	font-size: 17px;
-	color: #ccc;
+	color: #191a1a;
 	letter-spacing: 1px;
 	line-height: 1.2;
 	padding-bottom: 22px;
@@ -79,14 +79,14 @@ section.left .contactInfo{
 .iconGroup .icon{
 	width: 45px;
 	height: 45px;
-	border: 2px solid dodgerblue;
+	border: 2px solid #03fcb6;
 	border-radius: 50%;
 	margin-right: 20px;
 	position: relative;
 }
 .iconGroup .icon i{
 	font-size: 20px;
-	color: #ddd;
+	color: #040505;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -99,7 +99,7 @@ section.left .contactInfo{
 }
 .iconGroup .details span:nth-child(1){
 	text-transform: uppercase;
-	color: #ccc;
+	color: #191a1a;
 }
 section.left .socialMedia{
 	display: flex;
@@ -115,11 +115,11 @@ section.left .socialMedia{
 	text-align: center;
 	margin-right: 15px;
 	border-radius: 5px;
-	background-color: dodgerblue;
+	background-color: #03fcb6;
 	transition: 0.4s;
 }
 .socialMedia a i{
-	color: #ddd;
+	color: #040505;
 	font-size: 18px;
 	line-height: 35px;
 	border: 1px solid transparent;
@@ -127,12 +127,12 @@ section.left .socialMedia{
 }
 .socialMedia a:hover{
 	transform: translateY(-5px);
-	background-color: #2e2e2e;
-	color: dodgerblue;
-	border: 1px solid dodgerblue;
+	background-color: #02b59b;
+	color: #02b59b;
+	border: 1px solid #02b59b;
 }
 .socialMedia a:hover i{
-	color: dodgerblue;
+	color: #ffffff;
 }
 
 /* Code for the right section (column) */
@@ -157,8 +157,8 @@ section.left .socialMedia{
 	width: 100%;
 	font-size: 18px;
 	padding: 2px 0px;
-	background-color: #2e2e2e;
-	color: #ddd;
+	background-color: #ffffff;
+	color: #191a1a;
 	border: none;
 	border-bottom: 2px solid #666;
 	outline: none;
@@ -200,8 +200,8 @@ textarea::-webkit-scrollbar-thumb{
 .inputGroup button{
 	padding: 8px 16px;
 	font-size: 18px;
-	background-color: dodgerblue;
-	color: #ddd;
+	background-color: #03fcb6;
+	color:  #191a1a;
 	border: 1px solid transparent;
 	border-radius: 25px;
 	outline: none;
@@ -210,10 +210,10 @@ textarea::-webkit-scrollbar-thumb{
 	transition: 0.4s;
 }
 .inputGroup button:hover{
-	background-color: #2e2e2e;
-	color: dodgerblue;
+	background-color: #02b59b;
+	color: white;
 	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-	border: 1px solid dodgerblue;
+	border: 1px solid #02b59b;
 }
 @media(max-width: 1100px){
 	.messageForm .halfWidth{
