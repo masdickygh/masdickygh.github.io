@@ -33,11 +33,11 @@
         alert('Gak usah macem-macem 😏'); 
     }, false);
 </script>
-  <script>
-        // Menampilkan alert saat halaman dimuat
-        window.onload = function() {
+<script>
+        // Menampilkan alert sebelum halaman selesai dimuat
+        document.addEventListener("DOMContentLoaded", function() {
             alert("Jika layout web ini kurang rapi, silakan refresh ulang halaman ini.");
-        };
+        });
     </script>
 </head>
 
