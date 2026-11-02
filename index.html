@@ -255,10 +255,10 @@ const DATA = {
     "Shopee"
    ],
    "zoom": true,
-   "link": "https://id.shp.ee/9RbpPRrm",
+   "link": "/proof/shopee.pdf",
    "linkLabel": {
-    "id": "Kunjungi toko di Shopee",
-    "en": "Visit the shop on Shopee"
+    "id": "Unduh Laporan",
+    "en": "Download Report"
    }
   }
  ],
@@ -285,8 +285,8 @@ const DATA = {
    },
    "org": "Burger Bangor Mayor Oking",
    "when": {
-    "id": "",
-    "en": ""
+    "id": "±3 bulan",
+    "en": "~3 months"
    },
    "desc": {
     "id": "Melayani pelanggan dan melakukan stock opname.\nMenerapkan up selling dan cross selling.\nMencapai target omzet bulanan perusahaan dan mendapat penghargaan best teamwork.",
@@ -547,7 +547,7 @@ const fmt = d => { if (!d) return ""; const p = String(d).split("-"); if (p.leng
 const range = (s, e, u) => fmt(s) + (s ? " - " : "") + (e ? fmt(e) : u.now);
 const safe = u => /^https?:\/\//i.test(u || "");
 const bare = s => String(s).replace(/^https?:\/\/(www\.)?/i, "").replace(/\/$/, "");
-const a = (u, txt) => safe(u) ? `<a href="${esc(u)}" target="_blank" rel="noopener">${txt}</a>` : "";
+const a = (u, txt) => { if (!u || !(safe(u) || /^\//.test(u))) return ""; const isPdf = /\.pdf(?:[?#].*)?$/i.test(u); return `<a href="${esc(u)}"${isPdf ? " download" : " target=\"_blank\" rel=\"noopener\""}>${txt}</a>`; };
 
 const IC = {
   user: '<circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/>',
