@@ -625,7 +625,7 @@ function render() {
 
   document.getElementById("hero").innerHTML = `<div id="top">${DATA.openToWork ? `<span class="badge rv" style="--i:0"><i></i>${u.open}</span>` : ""}
     <h1 class="rv" style="--i:1">${esc(P.name)}</h1><p class="st rv" style="--i:2">${esc(t(P.headline))}</p><p class="bio rv" style="--i:3">${esc(t(P.bio))}</p>
-    <div class="cta rv" style="--i:4"><a class="btn p" href="#contact">${ic("chat")}${u.hire}</a></div><p class="meta rv" style="--i:5">${esc(t(P.role))} | ${esc(P.location)}</p></div>
+    <div class="cta rv" style="--i:4"><a class="btn p" href="#contact">${ic("chat")}${u.hire}</a><a class="btn" href="/proof/cv_dickyprasetya.pdf" download="cv_dickyprasetya.pdf">${ic("download")}Download CV</a></div><p class="meta rv" style="--i:5">${esc(t(P.role))} | ${esc(P.location)}</p></div>
     <div class="ph rv" style="--i:3"><div class="pi"><span>${esc(ini)}</span>${P.photo ? `<img src="${esc(P.photo)}" alt="${esc(P.name)}" onerror="this.remove()">` : ""}</div></div>`;
 
   document.getElementById("stats").innerHTML = (DATA.stats || []).length ? `<div class="stats rv">${DATA.stats.map(s =>
