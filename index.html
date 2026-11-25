@@ -574,11 +574,11 @@ const DATA = {
 const UI = {
   id: { about:"Tentang Saya", projects:"Project Unggulan", experience:"Pengalaman", skills:"Keahlian", education:"Pendidikan", certificates:"Sertifikat", testimonials:"Kata Mereka", contact:"Kontak",
         open:"Terbuka untuk kerja", cv:"Unduh CV", hire:"Hubungi saya", prob:"Masalah", act:"Yang saya kerjakan", res:"Hasil", site:"Buka project", repo:"Lihat kode", vid:"Tonton di YouTube",
-        now:"sekarang", doc:"Lihat Dokumentasi", newtab:"Buka di tab baru", dlpdf:"Unduh PDF", close:"Tutup", tools:"Tools", cert:"Sertifikasi", subP:"Studi kasus singkat: masalah, tindakan, dan hasilnya.", wa:"WhatsApp", ctT:"Mari ngobrol", ctP:"Saya terbuka untuk peluang kerja dan kolaborasi. Kirim pesan, saya balas secepatnya.", nav:"Menu", edu:"Pendidikan", org:"Organisasi",
+        now:"sekarang", doc:"Lihat Dokumentasi", close:"Tutup", tools:"Tools", cert:"Sertifikasi", subP:"Studi kasus singkat: masalah, tindakan, dan hasilnya.", wa:"WhatsApp", ctT:"Mari ngobrol", ctP:"Saya terbuka untuk peluang kerja dan kolaborasi. Kirim pesan, saya balas secepatnya.", nav:"Menu", edu:"Pendidikan", org:"Organisasi",
         cvh:{ sum:"Ringkasan", skills:"Keahlian", exp:"Pengalaman Kerja", proj:"Project", edu:"Pendidikan", cert:"Sertifikasi" } },
   en: { about:"About Me", projects:"Featured Projects", experience:"Experience", skills:"Skills", education:"Education", certificates:"Certificates", testimonials:"What others say", contact:"Contact",
         open:"Open to work", cv:"Download CV", hire:"Get in touch", prob:"Problem", act:"What I did", res:"Result", site:"Open project", repo:"View code", vid:"Watch on YouTube",
-        now:"present", doc:"View Documentation", newtab:"Open in new tab", dlpdf:"Download PDF", close:"Close", tools:"Tools", cert:"Certifications", subP:"Short case studies: problem, action, and result.", wa:"WhatsApp", ctT:"Let's talk", ctP:"I'm open to job opportunities and collaboration. Send a message and I'll reply soon.", nav:"Menu", edu:"Education", org:"Organizations",
+        now:"present", doc:"View Documentation", close:"Close", tools:"Tools", cert:"Certifications", subP:"Short case studies: problem, action, and result.", wa:"WhatsApp", ctT:"Let's talk", ctP:"I'm open to job opportunities and collaboration. Send a message and I'll reply soon.", nav:"Menu", edu:"Education", org:"Organizations",
         cvh:{ sum:"Summary", skills:"Skills", exp:"Work Experience", proj:"Projects", edu:"Education", cert:"Certifications" } }
 };
 const RM = matchMedia("(prefers-reduced-motion:reduce)").matches;
@@ -613,7 +613,6 @@ const IC = {
   star: '<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
   download: '<path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/>',
   eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
-  ext: '<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
   moon: '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',
   menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
   'chevron-left': '<path d="m15 18-6-6 6-6"/>',
@@ -725,11 +724,9 @@ function closePV() {
   if (pvOpener && pvOpener.focus) pvOpener.focus(); pvOpener = null;
 }
 function openPV(a) {
-  const u = UI[lang], href = a.getAttribute("href"), title = a.dataset.title || u.doc, name = href.split("/").pop();
+  const u = UI[lang], href = a.getAttribute("href"), title = a.dataset.title || u.doc;
   const m = document.createElement("div"); m.className = "pv"; m.setAttribute("role", "dialog"); m.setAttribute("aria-modal", "true"); m.setAttribute("aria-label", title); m.setAttribute("data-lenis-prevent", "");
   m.innerHTML = `<div class="pv-box"><div class="pv-bar"><strong class="pv-t">${esc(title)}</strong><div class="pv-act">
-    <a class="btn sm" href="${esc(href)}" target="_blank" rel="noopener">${ic("ext", 16)}${u.newtab}</a>
-    <a class="btn sm" href="${esc(href)}" download="${esc(name)}">${ic("download", 16)}${u.dlpdf}</a>
     <button class="btn sm ic pv-x" type="button" aria-label="${u.close}">${ic("x", 16)}</button></div></div>
     <iframe class="pv-f" title="${esc(title)}" src="${esc(href)}#view=FitH"></iframe></div>`;
   m.addEventListener("click", ev => { if (ev.target === m || ev.target.closest(".pv-x")) closePV(); });
